@@ -38,6 +38,13 @@ public class CalculatorTest
 		Assert.assertEquals(0, dto.getRepaymentAmount().compareTo(new BigDecimal("2.5")));
 		Assert.assertEquals(0, dto.getRemainderAmount().compareTo(ZERO));
 		//
+		// http://www.stichlberger.com/software/java-bigdecimal-gotchas/
+		// Precision != Scale
+		value = new BigDecimal("10");
+		dto = calculator.calcPayments(value, 4);
+		Assert.assertEquals(0, dto.getRepaymentAmount().compareTo(new BigDecimal("2.5")));
+		Assert.assertEquals(0, dto.getRemainderAmount().compareTo(ZERO));
+		//
 		dto = calculator.calcPayments(value, 3);
 		Assert.assertEquals(0, dto.getRepaymentAmount().compareTo(new BigDecimal("3.33")));
 		Assert.assertEquals(0, dto.getRemainderAmount().compareTo(new BigDecimal("0.01")));

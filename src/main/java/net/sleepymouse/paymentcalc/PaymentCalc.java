@@ -43,7 +43,7 @@ public class PaymentCalc
 	 */
 	private void exec(String[] args)
 	{
-		// Get the arguments - in real world woudl need to do validation here
+		// Get the arguments - in real world would need to do validation here
 		BigDecimal totalAmount = new BigDecimal(args[0]);
 		int numberOfPayments = Integer.parseInt(args[1]);
 		//

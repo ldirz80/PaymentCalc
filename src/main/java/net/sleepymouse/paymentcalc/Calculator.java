@@ -33,6 +33,8 @@ public class Calculator implements ICalculator
 	/**
 	 * Calculate the repayments amounts and final amount
 	 * 
+	 * Note: If you could live with less flexibility you could do this all as calculations on primitive types e.g. long.  
+	 * 
 	 * @param totalAmount
 	 *            Total amount requested
 	 * @param numberOfPayments
@@ -43,7 +45,7 @@ public class Calculator implements ICalculator
 	public PaymentResultDto calcPayments(BigDecimal totalAmount, int numberOfPayments)
 	{
 		BigDecimal payments = new BigDecimal(numberOfPayments);
-		BigDecimal payment = totalAmount.divide(payments, mode);
+		BigDecimal payment = totalAmount.divide(payments, 2, mode);
 		BigDecimal remainder = totalAmount.subtract(payment.multiply(payments));
 		return new PaymentResultDto(payment, remainder);
 	}
