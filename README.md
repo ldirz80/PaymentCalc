@@ -21,7 +21,7 @@ The build directory contains results for the following:
 
 ## To run
 
-usage: java -jar PaymentCalc-1.0.0.jar <Total Amount> <No of payments>
+usage: java -jar PaymentCalc-1.0.0.jar \<Total Amount> \<No of payments>
 
 
 
