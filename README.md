@@ -1,0 +1,2 @@
+# PaymentCalc
+Small test project
